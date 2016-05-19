@@ -1,0 +1,15 @@
+{
+  "name": "farmbuild-webinar",
+  "private": false,
+  "version": "0.1.0",
+  "description": "This is the example project used in FarmBuild webinar",
+  "repository": "https://github.com/FarmBuild/webinar",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "http-server": "0.9.0"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8001 -c-1"
+  }
+}
