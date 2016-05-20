@@ -1,5 +1,14 @@
 'use strict';
 
+var
+
+	/**
+	 * In order to create google map we need to pass the container element in DOM
+	 */
+	googleMapElement = document.getElementById('gmap'),
+	googleMap,
+	olMap;
+
 /**
  * AngularJS is popular JavaScript MVC framework which is developed by google.
  * In this example we use AngularJS to construct the structure of the client side application.
@@ -29,13 +38,6 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 			 * This is passed to ol.Map on creation to adjust maximum zoom level
 			 */
 			maxZoom = 19,
-
-			/**
-			 * In order to create google map we need to pass the container element in DOM
-			 */
-			googleMapElement = document.getElementById('gmap'),
-			googleMap,
-			olMap,
 
 			/**
 			 * putting different webmapping namespaces in local variables for easier access
