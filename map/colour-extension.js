@@ -4,7 +4,7 @@
  */
 
 angular.module('farmbuild.webmapping.examples')
-	.factory('colourExtension',	function (validations, $log, $rootScope) {
+	.factory('colourExtension', function (validations, $log, $rootScope) {
 
 		var paddocksLayer,
 			soilSampleImporter = farmbuild.soilSampleImporter,
@@ -27,11 +27,14 @@ angular.module('farmbuild.webmapping.examples')
 				feature.setStyle(new ol.style.Style({
 					fill: new ol.style.Fill({
 						color: convertHex(colour, 65)
+					}),
+					stroke: new ol.style.Stroke({
+						color: 'rgba(238,238,238,.7)',
+						width: 1
 					})
 				}))
 			})
 		};
-
 
 
 		/**

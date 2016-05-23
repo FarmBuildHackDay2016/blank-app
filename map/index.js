@@ -18,7 +18,8 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 	})
 
 	.controller('MapCtrl',
-	function ($scope, $log, $location, $rootScope, $filter, webmapping, colourExtension) {
+	function ($scope, $log, $location, $rootScope, $filter, webmapping) {
+	// function ($scope, $log, $location, $rootScope, $filter, webmapping, colourExtension) {
 		var
 
 			/**
@@ -244,7 +245,9 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 			if (angular.isDefined(actions.snapping.active())) {
 				activateSnapping = actions.snapping.active();
 			}
-			$scope.cancel();
+			if($scope.farmChanged || $scope.paddockChanged) {
+				$scope.cancel();
+			}
 			actions.destroy(olMap);
 			$scope.selectedPaddock = {};
 			if ($scope.selectedLayer === '') {
@@ -546,7 +549,7 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
 
-			colourExtension.colourPaddocks(olMap);
+			// colourExtension.colourPaddocks(olMap);
 		};
 
 		$scope.loadFarmData();
