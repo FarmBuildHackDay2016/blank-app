@@ -1,14 +1,5 @@
 'use strict';
 
-var
-
-	/**
-	 * In order to create google map we need to pass the container element in DOM
-	 */
-	googleMapElement = document.getElementById('gmap'),
-	googleMap,
-	olMap;
-
 /**
  * AngularJS is popular JavaScript MVC framework which is developed by google.
  * In this example we use AngularJS to construct the structure of the client side application.
@@ -27,7 +18,15 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 	})
 
 	.controller('MapCtrl',
-	function ($scope, $log, $location, $rootScope, $filter, webmapping) {
+	function ($scope, $log, $location, $rootScope, $filter, webmapping, colourExtension) {
+		var
+
+			/**
+			 * In order to create google map we need to pass the container element in DOM
+			 */
+			googleMapElement = document.getElementById('gmap'),
+			googleMap,
+			olMap;
 
 		var dataProjection,
 
@@ -546,6 +545,8 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 			olMap.getView().on('change:resolution', loadParcels);
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
+
+			colourExtension.colourPaddocks(olMap);
 		};
 
 		$scope.loadFarmData();
