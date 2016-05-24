@@ -19,7 +19,7 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 
 	.controller('MapCtrl',
 	function ($scope, $log, $location, $rootScope, $filter, webmapping) {
-	// function ($scope, $log, $location, $rootScope, $filter, webmapping, colourExtension) {
+	// colourExtension
 		var
 
 			/**
@@ -549,7 +549,9 @@ angular.module('farmbuild.webmapping.examples', ['farmbuild.webmapping'])
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
 
-			// colourExtension.colourPaddocks(olMap);
+			if(typeof colourExtension != 'undefined') {
+				colourExtension.colourPaddocks(olMap);
+			}
 		};
 
 		$scope.loadFarmData();
