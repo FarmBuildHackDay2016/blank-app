@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="farmbuild.wfs.demo.auth">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Farm Build - Web Services - Authentication demo (angularJS)</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="../../../../Downloads/farmbuild-web-services-demo-master/examples/config.js"></script>
+</head>
+<body ng-controller="WfsAuthCtrl">
+<content>
+    <h3>
+      <a href="../index.html">Farmbuild  - Web Services</a> - Authentication
+        <small>(angularJS)</small>
+    </h3>
+    <hr/>
+    <div>
+        <p>This page demonstrates how to use OAuth2 protocol to connect to the FarmBuild Identity Service and obtain a valid token.</p>
+        <p>This token is required to consume other FarmBuild services such as Soil Area Service.</p>
+        <p>Please check the <a href="https://github.com/FarmBuild/farmbuild-web-services-demo/wiki">WIKI</a> page for a more detailed explanation about this example. </p>
+    </div>
+    <form ng-submit="authenticate(authUrl, clientId, clientSecret, authScope )" method="post"
+          role="form" novalidate>
+        <fieldset>
+            <legend>
+                Authentication form
+            </legend>
+
+            <form-item class="form-group col-md-6">
+                <label>Identity Service URL</label>
+                <input name="authUrl" ng-model="authUrl" type="text"
+                       class="form-control">
+            </form-item>
+
+            <form-item class="form-group col-md-6">
+                <label>Scope</label>
+                <select ng-model="authScope" class="form-control" >
+                    <option ng-repeat="item in authScopes"
+                            value="{{item}}">
+                        {{item}}
+                    </option>
+                </select>
+            </form-item>
+
+            <form-item class="form-group col-md-6">
+                <label>Client Id</label>
+                <input name="clientId" ng-model="clientId" type="text" class="form-control">
+            </form-item>
+
+            <form-item class="form-group col-md-6">
+                <label>Client Secret</label>
+                <input name="clientSecret" ng-model="clientSecret" type="text" class="form-control">
+            </form-item>
+
+          <form-item class="form-group col-md-12">
+            <label>Grant Type</label>
+            <div class="panel panel-default">
+              <div  class="panel-body">
+                client_credentials
+              </div>
+            </div>
+          </form-item>
+
+            <buttons class="col-md-12">
+                <button type="submit" class="btn btn-primary">Authenticate</button>
+            </buttons>
+        </fieldset>
+    </form>
+    <br/><br/>
+    <summary>
+        <fieldset>
+            <legend>
+                Result
+            </legend>
+            <error ng-cloak class="col-sm-12 bg-danger" ng-show="error">
+                <p ng-repeat="errMsg in errorMessages">
+                    {{errMsg}}
+                </p>
+            </error>
+
+            <form-item class="form-group col-sm-12">
+                <p ng-repeat="msg in messages">
+                    {{msg}}
+                </p>
+            </form-item>
+            <form-item class="form-group col-sm-12">
+
+                <textarea name="token" ng-model="token" rows="8" class="form-control"></textarea>
+            </form-item>
+        </fieldset>
+    </summary>
+</content>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
+<script src="../../libs/farmbuild-core.min.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
