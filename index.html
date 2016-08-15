@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="farmbuild.webmapping.examples">
+<html ng-app="farmbuild.hackday.blank">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FarmBuild Web Mapping</title>
+    <title>FarmBuild Hack Day 2016!</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
@@ -15,73 +15,18 @@
 <content>
     <modal ng-if="noResult" ng-include="'modal-validation-error.tpl.html'"></modal>
     <h3>
-        FarmBuild Web Mapping
+        FarmBuild Hack Day 2016!
         <small>(angularJS)</small>
     </h3>
     <hr/>
 
-    <form ng-submit="createNew(farmNew)"
-          role="form"
-          novalidate>
-        <fieldset>
-            <legend>
-                Create new FarmData
-            </legend>
-
-            <form-item class="form-group col-md-6">
-                <label>Name *</label>
-                <input name="name" ng-model="farmNew.name"
-                       class="form-control"
-                       required>
-            </form-item>
-
-            <form-item class="form-group col-md-6">
-                <label>ID (external reference for this farm)</label>
-                <input name="id" ng-model="farmNew.id" class="form-control">
-            </form-item>
-
-            <form-item class="form-group col-md-6">
-              <label>Projection (CRS) *</label>
-              <select ng-options="item.name as item.label for item in crsSupported"
-                      ng-model="farmNew.crs"
-                      class="form-control">
-              </select>
-            </form-item>
-
-            <buttons class="col-md-12">
-                <button type="submit" class="btn btn-primary">Create</button>
-            </buttons>
-        </fieldset>
-    </form>
-    <form role="form" name="form" novalidate>
-        <hr/>
-        <h4>
-            Load FarmData to update the farm boundary or paddocks
-        </h4>
-
-        <form-item class="form-group col-sm-12">
-            <label>Please select your farm data</label>
-            <input id="loadFile" name="farmData" type="file" on-read-file="loadFarmData($fileContent)" class="form-control">
-        </form-item>
-        <buttons class="col-md-12" ng-if="farmData.name">
-            <button class="btn btn-primary" ng-click="calculate()">Load</button>
-            <a type="button" class="btn btn-primary" ng-click="exportFarmData(farmData)" ng-disabled="!farmData.name">Export
-                farm data</a>
-            <button class="btn btn-primary" ng-click="clear()">Clear session</button>
-        </buttons>
-
-        <div class="clearfix"></div>
-    </form>
-
     <empty-message ng-if="!noResult"><i class="fa fa-warning icon"></i>
-        Provide a farm data to see the map.
+        <h3>Use this blank app to start your user story!</h3>
+        AngularJS, Bootstrap and all FarmBuild component are already included here.
     </empty-message>
 
     <summary ng-if="farmData.name">
     </summary>
-    <version>
-        Version: <span ng-bind="appVersion"></span>
-    </version>
 </content>
 
 <script src="libs/ol/ol.js" type="text/javascript"></script>
@@ -91,7 +36,7 @@
 <script src="libs/farmbuild-farmdata.js"></script>
 <script src="libs/farmbuild-webmapping.js"></script>
 <script src="libs/farmbuild-soilsampleimporter.js"></script>
-<script src="config.js"></script>
+<script src="libs/farmbuild-nutrientcalculator.js"></script>
 <script src="index.js"></script>
 
 <script type="text/ng-template" id="modal-validation-error.tpl.html" >

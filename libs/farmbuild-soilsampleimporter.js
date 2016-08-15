@@ -7,7 +7,7 @@ angular.module("farmbuild.soilSampleImporter", [ "farmbuild.core", "farmbuild.fa
     soilSampleImporter.version = "0.1.0";
     soilSampleImporter.ga = googleAnalyticsSoilSampleImporter;
     soilSampleImporter.session = soilSampleImporterSession;
-    $log.info("Welcome to Soil Sample Importer... " + "this should only be initialised once! why we see twice in the example?");
+    $log.info("Welcome to Soil Sample Importer... ");
     soilSampleImporter.find = function() {
         return soilSampleImporterSession.find();
     };
@@ -265,7 +265,6 @@ angular.module("farmbuild.soilSampleImporter").constant("importFieldDefaults", {
 "use strict";
 
 angular.module("farmbuild.soilSampleImporter").factory("importField", function($log, importFieldTypes, validations) {
-    $log.info("importField ");
     var importField = {};
     importField.hasClassification = function(importFieldName) {
         var fieldType = importFieldTypes.byName(importFieldName);
@@ -349,7 +348,6 @@ angular.module("farmbuild.soilSampleImporter").factory("importFieldTypes", funct
 "use strict";
 
 angular.module("farmbuild.soilSampleImporter").factory("importFieldSelector", function($log, farmdata, soilSampleConverter, importFieldTypes, collections, importFieldSelectionValidator) {
-    $log.info("importFieldSelector ");
     var importFieldSelector = {}, _paddocks = [], _types = importFieldTypes.toArray();
     function _findPaddockWithName(paddocks, name) {
         for (var i = 0; i < paddocks.length; i++) {
@@ -919,7 +917,6 @@ angular.module("farmbuild.soilSampleImporter").constant("soilClassificationDefau
 "use strict";
 
 angular.module("farmbuild.soilSampleImporter").factory("soilClassification", function($log, soilClassificationTypes, validations) {
-    $log.info("soilClassification ");
     var soilClassification = {}, _isDefined = validations.isDefined;
     function _isWithinRange(min, max, classificationValue) {
         if (!_isDefined(min) && _isDefined(max)) {
