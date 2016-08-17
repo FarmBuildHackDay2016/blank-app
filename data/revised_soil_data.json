@@ -82,10 +82,10 @@
             "Sample Name": "Paddock 2",
             "Colwell Potassium (mg/kg)": 640,
             "Exch Potassium (meq/100g)": 1.4,
-            "PBI": 20,
-            "Exch Calcium (meq/100g)": 23,
-            "Exch Magnesium (meq/100g)": 44,
-            "K to CaM": 800
+            "PBI": 66,
+            "Exch Calcium (meq/100g)": 9,
+            "Exch Magnesium (meq/100g)": 1.4,
+            "K to CaMg": 0.134615385
           }
         ]
       }
@@ -130,6 +130,11 @@
             "Sample Id": "3",
             "Sample Name": "Paddock 3",
             "Colwell Potassium (mg/kg)": 640,
+            "Exch Potassium (meq/100g)": 1.4,
+            "PBI": 66,
+            "Exch Calcium (meq/100g)": 9,
+            "Exch Magnesium (meq/100g)": 1.4,
+            "K to CaMg": 0.134615385
     
           }
         ]
@@ -176,6 +181,10 @@
             "Sample Name": "Paddock 4",
             "Colwell Potassium (mg/kg)": 710,
             "Exch Potassium (meq/100g)": 1.4,
+            "PBI": 79,
+            "Exch Calcium (meq/100g)": 8.4,
+            "Exch Magnesium (meq/100g)": 1.5,
+            "K to CaMg": 0.154639175
 
           }
         ]
@@ -229,7 +238,11 @@
             "Sample Id": "5",
             "Sample Name": "Paddock 5",
             "Colwell Potassium (mg/kg)": 450,
-     
+            "Exch Potassium (meq/100g)": 1,
+            "PBI": 75,
+            "Exch Calcium (meq/100g)": 10,
+            "Exch Magnesium (meq/100g)": 2.1,
+            "K to CaMg": 0.082644628
           }
         ]
       }
@@ -290,7 +303,11 @@
             "Sample Id": "1",
             "Sample Name": "Paddock 1",
             "Colwell Potassium (mg/kg)": 450,
-  
+            "Exch Potassium (meq/100g)": 1,
+            "PBI": 75,
+            "Exch Calcium (meq/100g)": 10,
+            "Exch Magnesium (meq/100g)": 2.1,
+            "K to CaMg": 0.082644628
           }
         ]
       }
