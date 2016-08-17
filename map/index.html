@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
     <title>Load Susan's farm example</title>
 </head>
 <body>
@@ -69,10 +70,10 @@
 <script src="../libs/turf/turf.min.js"></script>
 
 <script src="https://maps.google.com/maps/api/js?v=3&amp;sensor=false&libraries=places"></script>
-
 <script type="text/javascript" src="../libs/farmbuild-core.js"></script>
 <script type="text/javascript" src="../libs/farmbuild-farmdata.js"></script>
 <script type="text/javascript" src="../libs/farmbuild-webmapping.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap-tpls.js"></script>
 <script src="../libs/farmbuild-soilsampleimporter.js"></script>
 
 
@@ -153,6 +154,9 @@
                     Cancel
                 </button>
             </wrapper>
+            <div style="display:inline-block; min-height:290px;" >
+                <!--<div uib-datepicker ng-model="$parent.dt" class="well well-sm" datepicker-options="{}"></div>-->
+            </div>
             <hr/>
         </form-section>
     </fieldset>

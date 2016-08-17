@@ -8,13 +8,17 @@
  * All the api function are available via "farmbuild" namespace (eg: farmbuild.webmapping, farmbuild.nutrientcalculator)
  * If you are using AngularJS in your application you can consume farmbuild component as AngularJS modules, similar to this example.
  */
-angular.module('farmbuild.webmapping.examples',[])
+angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 
 	.run(function ($rootScope) {
 	})
 
 	.controller('MapCtrl',
+<<<<<<< Updated upstream
 	function ($scope, $log, $location, $rootScope, $filter, $http) {
+=======
+	function ($scope, $log, $location, $rootScope, $filter, solarService) {
+>>>>>>> Stashed changes
 		
 		var
 
@@ -51,6 +55,7 @@ angular.module('farmbuild.webmapping.examples',[])
 		$scope.paddockChanged = false;
 		$scope.noResult = $scope.farmLoaded = false;
 		$scope.selectedLayer = '';
+		$scope.dt = new Date();
 		$scope.selectedPaddock = {
 			name: '',
 			type: '',
@@ -550,9 +555,52 @@ angular.module('farmbuild.webmapping.examples',[])
 			olMap.getView().on('change:resolution', loadParcels);
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
-			
+			$scope.dt = new Date();
+			solarService.getSolarCover(new Date().getTime()).then(function (cover) {
+				console.log('the cover is: ' + JSON.stringify(cover));
+			})
 		};
 
-		//$scope.loadFarmData();
+		$scope.loadFarmData();
+	}).service('riskService', function ($http) {
+	
+		this.calculateRisk = function(paddocks) {
+			
+		}
 
+	}).service('solarService', function ($http) {
+
+		function getLastFrom(data, x) {
+			var ret = [];
+			for (; x >= 0; x--) {
+				ret.unshift(data[x]);
+				if (ret.length >= 5) {
+					break;
+				}
+			}
+			return ret;
+		}
+
+		this.getSolarCover = function (date) {
+			var ret;
+			return $http.get('../data/IDCJAC0016_081096_2016_Data.json').then(function (ret) {
+				var json = ret.data;
+				var found = json.some(function (row, i){
+					if (row.time > date) {
+						ret = getLastFrom(json, i - 1);
+						return true;
+					}
+					else {
+						return false;
+					}
+				});
+				if (!found) {
+					ret = getLastFrom(json, json.length - 1);
+
+				}
+				return ret;
+			});
+
+
+		}
 	});
