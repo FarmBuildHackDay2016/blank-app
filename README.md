@@ -46,17 +46,17 @@ MED = 2
 LOW = 1
 
 //PBI Above 250
-If PBI <= 250 {
+if PBI <= 250 {
 
-	If Coll_K < 200 {}
+	if Coll_K < 200 {}
 		SRR = 1
   }
 
-	ElseIf Coll_K >200 && < 450 {
+	else if Coll_K >200 && < 450 {
     SRR = 2
   }
 
-	Else {
+	else {
 	  // Coll_K > 450
 		SRR = 3
   }
@@ -64,42 +64,42 @@ If PBI <= 250 {
 }
 
 // PBI Between 200 and 400
-ElseIf PBI > 200 && <= 400
+else if PBI > 200 && <= 400
 
-  If Coll_K < 250 {}
+  if Coll_K < 250 {}
     SRR = 1
   }
 
-  ElseIf Coll_K >250 && < 450 {
+  else if Coll_K >250 && < 450 {
     SRR = 2
   }
 
-  Else {
+  else {
     // Coll_K > 450
     SRR = 3
     }
 }
 
 //PBI Greater Than 400
-Else {
+else {
 
-  If Coll_K < 300 {}
+  if Coll_K < 300 {}
     SRR = 1
     }
 
-  ElseIf Coll_K > 300 && < 500 {
+  else if Coll_K > 300 && < 500 {
     SRR = 2
   }
 
-  Else {
+  else {
     // Coll_K > 500
     SRR = 3
   }
 }
 
-import SOLAR_RR
+import CRR
 
-RR_sum =  SRR + SOLAR_RR
+RR_sum =  SRR + CRR
 
 if RR_sum == 2
   RR = 1 // LOW Risk Rating
@@ -111,4 +111,3 @@ if RR_sum == 5 || RR_sum == 6
   RR = 3 // HIGH Risk Rating
 
 return RR
-'''
