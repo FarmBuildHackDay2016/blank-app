@@ -28,6 +28,16 @@
         <farm-details ng-include="'farm-details.tpl.html'"></farm-details>
     </div>
     <div class="col-md-8 col-lg-9">
+        <div style="display:inline-block; min-height:290px;" >
+            <select id="timePicker" class="farm-layers addon" ng-model="dateString" ng-change="selectDate()">
+                <option value="now">Now</option>
+                <option value="1469973600000">August 2016</option>
+                <option value="1462024800000">May 2016</option>
+                <option value="1451566800000">Jan 2016</option>
+            </select>
+
+            <button ng-click="applyDate()">APPLY</button>
+        </div>
         <div id="map" class="map">
             <input type="text" id="locationAutoComplete" class="address-search addon">
             <wrapper>
@@ -154,9 +164,6 @@
                     Cancel
                 </button>
             </wrapper>
-            <div style="display:inline-block; min-height:290px;" >
-                <!--<div uib-datepicker ng-model="$parent.dt" class="well well-sm" datepicker-options="{}"></div>-->
-            </div>
             <hr/>
         </form-section>
     </fieldset>
@@ -164,7 +171,7 @@
 </script>
 <script type="text/ng-template" id="farm-details.tpl.html">
     <fieldset>
-        <legend>Farm information</legend>
+        <legend>Downer Cow Risk Ratiing</legend>
         <form-section>
             <form-item class="form-group">
                 <label>Farm name *:</label>
@@ -200,20 +207,12 @@
             </wrapper>
             <hr/>
 
-            <wrapper ng-show="!farmChanged && !paddockChanged">
-
-                <button class="btn btn-primary" ng-click="exportFarmData(farmData)">
-                    Export farm data
-                </button>
-
-                <button class="btn btn-primary" ng-click="toKml()" ng-show="farmData.name">
-                    Export KML
-                </button>
-                <button class="btn btn-primary" ng-click="toGeoJson()" ng-show="farmData.name">
-                    Export GeoJSON
-                </button>
-                <hr>
-            </wrapper>
+            <div>
+            <h2>Risk Factor</h2>
+              <div style="background-color:rgba(126,225,126,0.7)">Low Risk</div>
+              <div style="background-color:rgba(250,151,21,0.7)">Medium Risk</div>
+              <div style="background-color:rgba(245,64,44,0.7)">High Risk</div>
+            </div>
 
         </form-section>
     </fieldset>

@@ -237,9 +237,9 @@
           {
             "Sample Id": "5",
             "Sample Name": "Paddock 5",
-            "ColP": 300,
+            "ColP": 20,
             "ExchP": 1,
-            "PBI": 75,
+            "PBI": 20,
             "ExchC": 10,
             "ExchM": 2.1,
             "KtoCaMg": 0.082644628
