@@ -497,7 +497,8 @@ angular.module('farmbuild.webmapping.examples',[])
 				webmapping.update(farmData);
 			}
 		}
-		$http.get('../data/farmdata-DemoFarm-20160520094409.json').then(function(res) {
+		//revised_soil_data.json
+		$http.get('../data/revised_soil_data.json').then(function(res) {
 			$scope.loadFarmData(res.data);
 		})
 		$scope.loadFarmData = function (data) {
