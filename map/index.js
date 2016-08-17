@@ -588,15 +588,28 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			return map;
 		}
 		function getColour(farmdata, paddock){
+			var colour;
 			//console.log(JSON.stringify(farmdata));
 			var soilResults = paddock.soils.sampleResults[0];
 			console.log(soilResults.ColP,soilResults.PBI);
 			//console.log(paddock.soils.sampleResults[0]);
 			var risk = riskService.calculateRisk(soilResults.ColP, soilResults.PBI);
+			console.log(risk);
+			switch (risk) {
+				case 1 :
+					colour = "rgba(126,225,126,0.7)";
+					break
+				case 2 :
+					colour = "rgba(250,151,21,0.7)";
+					break;
+				case 3 :
+					colour = "rgba(245,64,44,0.7)";
+					break;
+			}
+			console.log(colour);
 
 
-
-			return '#fff6a6'
+			return colour;
 		}
 
 		function findPaddockByName(paddocks, name) {

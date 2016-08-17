@@ -164,7 +164,7 @@
 </script>
 <script type="text/ng-template" id="farm-details.tpl.html">
     <fieldset>
-        <legend>Farm information</legend>
+        <legend>Downer Cow Risk Ratiing</legend>
         <form-section>
             <form-item class="form-group">
                 <label>Farm name *:</label>
@@ -200,20 +200,12 @@
             </wrapper>
             <hr/>
 
-            <wrapper ng-show="!farmChanged && !paddockChanged">
-
-                <button class="btn btn-primary" ng-click="exportFarmData(farmData)">
-                    Export farm data
-                </button>
-
-                <button class="btn btn-primary" ng-click="toKml()" ng-show="farmData.name">
-                    Export KML
-                </button>
-                <button class="btn btn-primary" ng-click="toGeoJson()" ng-show="farmData.name">
-                    Export GeoJSON
-                </button>
-                <hr>
-            </wrapper>
+            <div>
+            <h2>Risk Factor</h2>
+              <div style="background-color:rgba(126,225,126,0.7)">Low Risk</div>
+              <div style="background-color:rgba(250,151,21,0.7)">Medium Risk</div>
+              <div style="background-color:rgba(245,64,44,0.7)">High Risk</div>
+            </div>
 
         </form-section>
     </fieldset>
