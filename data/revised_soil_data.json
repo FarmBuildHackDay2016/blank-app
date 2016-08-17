@@ -302,12 +302,12 @@
           {
             "Sample Id": "1",
             "Sample Name": "Paddock 1",
-            "Colwell Potassium (mg/kg)": 450,
-            "Exch Potassium (meq/100g)": 1,
+            "ColP": 450,
+            "ExchP": 1,
             "PBI": 75,
-            "Exch Calcium (meq/100g)": 10,
-            "Exch Magnesium (meq/100g)": 2.1,
-            "K:CaMg": 0.082644628
+            "ExchC": 10,
+            "ExchM": 2.1,
+            "KtoCaMg": 0.082644628
           }
         ]
       }
