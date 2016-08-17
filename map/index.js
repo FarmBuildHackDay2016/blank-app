@@ -14,7 +14,7 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 	})
 
 	.controller('MapCtrl',
-	function ($scope, $log, $location, $rootScope, $filter, solarService, $http, riskService) {
+	function ($scope, $log, $location, $rootScope, $filter, $http, riskService, solarService) {
 
 		var
 
@@ -501,7 +501,9 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 
 
 		//revised_soil_data.json
-		$http.get('../data/revised_soil_data.json').then(function(res) {
+		solarService.init().then(function () {
+			return $http.get('../data/revised_soil_data.json');
+		}).then(function(res) {
 			$scope.loadFarmData(res.data);
 		})
 		$scope.loadFarmData = function (data) {
@@ -554,9 +556,6 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
 			$scope.dt = new Date();
-			solarService.getSolarCover(new Date().getTime()).then(function (cover) {
-				console.log('the cover is: ' + JSON.stringify(cover));
-			})
 
 			var paddocksLayer = farmbuild.webmapping.olHelper.paddocksLayer(olMap);
 			//console.log()
@@ -592,27 +591,75 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			var soilResults = paddock.soils.sampleResults[0];
 			console.log(soilResults.ColP,soilResults.PBI);
 			//console.log(paddock.soils.sampleResults[0]);
-			var risk = riskService.calculateRisk(soilResults.ColP, soilResults.PBI);
+			var risk = riskService.calculateRisk($scope.dt, soilResults.ColP, soilResults.PBI);
 
 
 
 			return '#fff6a6'
 		}
 
-		function findPaddockByName(paddocks, name) {
-			return paddocks.some(function (p) {
-				//console.info('findPaddockById', paddocks, name, p);
-				return p.name === name;
-			})
-		}
 
 		//$scope.loadFarmData();
-	}).service('riskService', function ($http) {
-	
-		this.calculateRisk = function(colP, pbi) {
+	}).service('riskService', function ($http, solarService) {
+
+		this.calculateSoil = function (colP, pbi) {
+			var risk = 0;
+			if (pbi < 250) {
+				if (colP < 200) {
+					risk = 1;
+				}
+				else if (colP < 450){
+					risk = 2;
+
+				}
+				else {
+					risk = 3;
+
+				}
+			}
+			else if (pbi < 450) {
+				if (colP < 250) {
+					risk = 1;
+
+				}
+				else if (colP < 450){
+
+					risk = 2;
+				}
+				else {
+					risk = 3;
+
+				}
+
+			}
+			else {
+				if (colP < 300) {
+
+					risk = 1;
+				}
+				else if (colP < 500){
+					risk = 2;
+
+				}
+				else {
+					risk = 3;
+
+				}
+
+			}
+			return risk;
+		}
+
+		this.calculateRisk = function(date, colP, pbi) {
+			var soilRisk = this.calculateSoil(colP, pbi);
+			var coverRisk = solarService.getSolarCover(new Date().getTime());
 
 
-			return parseInt(Math.random() * 3) + 1;
+
+			console.log('the cover is: ' + JSON.stringify(coverRisk));
+			console.log('the soil is: ' + JSON.stringify(soilRisk));
+			var totalRisk = soilRisk + coverRisk;
+			return parseInt(Math.ceil(totalRisk / 2));
 		}
 
 	}).service('solarService', function ($http) {
@@ -629,24 +676,41 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 		}
 
 		this.getSolarCover = function (date) {
-			var ret;
-			return $http.get('../data/IDCJAC0016_081096_2016_Data.json').then(function (ret) {
-				var json = ret.data;
-				var found = json.some(function (row, i){
-					if (row.time > date) {
-						ret = getLastFrom(json, i - 1);
-						return true;
-					}
-					else {
-						return false;
-					}
-				});
-				if (!found) {
-					ret = getLastFrom(json, json.length - 1);
+			var totalClouds = 0;
+			this.getSolarFiveDays(date).forEach(function (solarDay) {
+				totalClouds += solarDay.clouds;
+			})
+			var cloudRange = parseInt(Math.ceil(totalClouds * 2));
+			cloudRange = Math.max(1, cloudRange);
+			cloudRange = Math.min(3, cloudRange);
 
-				}
-				return ret;
+			return cloudRange;
+		}
+
+		this.init = function () {
+			var that = this;
+			return $http.get('../data/IDCJAC0016_081096_2016_Data.json').then(function (ret) {
+				that.solarDays = ret.data;
 			});
+		}
+
+		this.getSolarFiveDays = function (date) {
+			var ret;
+			var json = this.solarDays;
+			var found = json.some(function (row, i){
+				if (row.time > date) {
+					ret = getLastFrom(json, i - 1);
+					return true;
+				}
+				else {
+					return false;
+				}
+			});
+			if (!found) {
+				ret = getLastFrom(json, json.length - 1);
+
+			}
+			return ret;
 
 
 		}

@@ -82,7 +82,7 @@
             "Sample Name": "Paddock 2",
             "ColP": 640,
             "ExchP": 1.4,
-            "PBI": 66,
+            "PBI": 500,
             "ExchC": 9,
             "ExchM": 1.4,
             "KtoCaMg": 0.134615385
@@ -129,7 +129,7 @@
           {
             "Sample Id": "3",
             "Sample Name": "Paddock 3",
-            "ColP": 640,
+            "ColP": 40,
             "ExchP": 1.4,
             "PBI": 66,
             "ExchC": 9,
@@ -237,7 +237,7 @@
           {
             "Sample Id": "5",
             "Sample Name": "Paddock 5",
-            "ColP": 450,
+            "ColP": 300,
             "ExchP": 1,
             "PBI": 75,
             "ExchC": 10,
@@ -302,7 +302,7 @@
           {
             "Sample Id": "1",
             "Sample Name": "Paddock 1",
-            "ColP": 450,
+            "ColP": 200,
             "ExchP": 1,
             "PBI": 75,
             "ExchC": 10,

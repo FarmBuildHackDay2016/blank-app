@@ -24,12 +24,12 @@ function parse(filename) {
           var time = moment(data[2] + data[3] + data[4],'YYYY-MM-DD');
           var dayInYear = time.dayOfYear();
           var solar = parseFloat(data[5]);
-          var avg = findAvg(dayInYear);
+          var sunny = findAvg(dayInYear);
           return {
             date: time.unix() * 1000,
             solar: solar,
-            avg: avg,
-            diff: (avg - solar) / avg
+            sunny: sunny,
+            clouds: (sunny - solar) / sunny
           }
         }
       }).filter(function (row) {
