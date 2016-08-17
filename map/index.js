@@ -14,7 +14,7 @@ angular.module('farmbuild.webmapping.examples',[])
 	})
 
 	.controller('MapCtrl',
-	function ($scope, $log, $location, $rootScope, $filter) {
+	function ($scope, $log, $location, $rootScope, $filter, $http, Treatment) {
 		
 		var
 
@@ -26,6 +26,16 @@ angular.module('farmbuild.webmapping.examples',[])
 			webmapping = farmbuild.webmapping,
 			olMap;
 
+		/* matt and siraj */
+		
+		/*olCoordinates
+		/*var olCoordinates = ol.proj.transform([lon, lat],"WGS84", "EPSG:900913")*/
+		
+		/*v/*ar olCoordinates = ol.proj.transform([lon, lat],"WGS84", "EPSG:900913")*/
+                /*['Tatura', -36.43 , 145.23 , 1]*/
+    
+
+		
 		var dataProjection,
 
 			/**  This example is using Web Mercator: EPSG:3857 to display data on google map */
@@ -223,6 +233,20 @@ angular.module('farmbuild.webmapping.examples',[])
 			}
 
 			$scope.selectedPaddock.area = measurement.area(selectedPaddock);
+			if(sessionStorage[$scope.selectedPaddock.name]){
+				var data = angular.fromJson(sessionStorage[$scope.selectedPaddock.name])
+				var startDate = new Date(data.date);
+				var compareDate = angular.copy(startDate);
+				compareDate.setDate(compareDate.getDate() + data.whp);
+				var today = new Date();
+				if(compareDate <= today){
+					$scope.selectedPaddock.treatmentStatus = 'Treatment completed';
+				}
+				if(compareDate > today){
+					$scope.selectedPaddock.treatmentStatus = 'Under treatment';
+				}
+			
+			}
 			$log.info('Paddock selected: ' + $scope.selectedPaddock.name);
 			updateNgScope();
 		};
@@ -501,8 +525,14 @@ angular.module('farmbuild.webmapping.examples',[])
 		$scope.loadFarmData = function () {
 			var geoJsons;
 
-			var created = webmapping.create();
-			webmapping.load(created);
+			//var created = webmapping.create();
+			//var created = webmapping.load();
+			
+			
+			//farmdata-Mynewfarm-20160817110115.json
+			
+			$http.get('../data/farmdata-Mynewfarm-20160817110115.json').then(function(resp){
+						webmapping.load(resp.data);
 			$scope.farmData = webmapping.find();
 			addCustomPaddockTypes($scope.farmData);
 			addCustomPaddockGroups($scope.farmData);
@@ -547,9 +577,33 @@ angular.module('farmbuild.webmapping.examples',[])
 			olMap.getView().on('change:resolution', loadParcels);
 			olMap.getView().on('change:center', loadParcels);
 			$scope.farmLoaded = true;
+			}, function(error){})
+			
+	
 			
 		};
+		
+		function _treatmetNamesByType(treatmentType){
+			return Treatment.treatmentTypes[treatmentType];
+		}
 
+		$scope.treatmentNames = [];
+		
+		$scope.filterTreatmentNames = function(treatmentType){
+			var treatmentNames = _treatmetNamesByType(treatmentType);
+			$scope.treatmentNames = treatmentNames;
+		}
+		
+
+		$scope.addPaddockTreatment=function(treatment, selectedPaddock){
+			
+			sessionStorage.setItem(selectedPaddock.name, JSON.stringify(treatment));
+			$scope.showTreatment = false;
+		}
+		
+		$scope.showPaddockTreatmentForm = function(){
+			$scope.showTreatment = true;
+		}
 		$scope.loadFarmData();
 
 	});

@@ -19,6 +19,7 @@
 <div ng-controller="MapCtrl">
 
     <modal ng-show="measuredValue > 0" ng-include="'modal-measure-info.tpl.html'"></modal>
+	<modal ng-show="showTreatment" ng-include="'modal-treatment-info.tpl.html'"></modal>
     <modal ng-if="noResult"
            ng-include="'modal-validation-error.tpl.html'"></modal>
     <div class="col-md-4 col-lg-3"
@@ -76,7 +77,9 @@
 <script src="../libs/farmbuild-soilsampleimporter.js"></script>
 
 
+
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="treatment.js"></script>
 <script type="text/ng-template" id="modal-validation-error.tpl.html">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -116,6 +119,14 @@
                    ng-bind="selectedPaddock.area | number : 2"
                         ></p>
             </form-item>
+			
+            <form-item class="form-group">
+                <label for="selectedPaddockArea">Treatment status:</label>
+
+                <p type="text" id="selectedPaddockArea" class="form-control"
+                   ng-bind="selectedPaddock.treatmentStatus"
+                        ></p>
+            </form-item>
             <form-item class="form-group">
                 <label for="selectedPaddockType">Type:</label>
                 <select id="selectedPaddockType" class="form-control" ng-change="onPaddockDetailsChanged()"
@@ -144,6 +155,9 @@
             </button>
             <button class="btn btn-danger" ng-click="removeSelectedPaddock()" ng-show="farmData.name">
                 Remove
+            </button>
+			<button class="btn btn-primary" ng-click="showPaddockTreatmentForm()" ng-show="farmData.name">
+                Upload Paddock Treatment
             </button>
             <wrapper ng-show="paddockChanged">
                 <button class="btn btn-primary" ng-click="apply()">
@@ -225,6 +239,70 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" ng-click="$parent.measuredValue=0">Ok</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-treatment-info.tpl.html">
+    <div class="modal-dialog absolute">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Treatment</h3>
+            </div>
+            <div class="modal-body">
+			<form>
+				<div class="col-md-12">
+                <label id="farmName">Treatment type: </label>
+				<select id="treamentType" class="form-control" ng-model="treatment.type" ng-change="filterTreatmentNames(treatment.type)">
+                    <option value="">Select Treatment</option>
+                    <option value="nutrient">Nutrient</option>
+                    <option value="chemical">Chemical</option>
+					<option value="effluent">Effluent</option>
+					<option value="grazing">Grazing</option>
+                </select>
+				</div>
+			
+			<div class="col-md-12">
+				 <label id="farmName">Treatment name: </label>
+				<select id="treamentName" class="form-control" ng-model="treatment.name" ng-options="tn for tn in treatmentNames;" ng-change="">
+				    
+				</select>
+				</div>
+				<div class="col-md-12">
+				 <label id="farmName">Date Applied: </label>
+		<input type="date" ng-model="treatment.date" class="form-control" />	
+		</div>
+		
+				<div class="col-md-12">
+				 <label id="farmName">Rate: </label>
+		<input type="number" ng-model="treatment.rate" class="form-control" min="0" />	
+		</div>
+		
+		
+				<div class="col-md-12">
+				 <label id="farmName">WHP (days): </label>
+		<input type="number" ng-model="treatment.whp" class="form-control" min="0" />	
+		</div>
+		
+		<div class="col-md-12">
+                <label id="farmName">Weather condition: </label>
+				<select id="treamentType" ng-model="treatment.weatherCondition" class="form-control" ng-model="selectedType" ng-change="">
+                    <option value="">Select weather condition</option>
+                    <option value="nutrient">Windy</option>
+                    <option value="chemical">Sunny</option>
+					<option value="effluent">Cloudy</option>
+					<option value="grazing">Raining</option>
+                </select>
+				</div>
+			
+            
+      
+				</form>
+				<div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="addPaddockTreatment(treatment, selectedPaddock)">Ok</button>
             </div>
         </div>
     </div>

@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "dateCreated": "2016-08-17T00:51:03.721Z",
+  "dateLastUpdated": "2016-08-17T01:01:14.995Z",
+  "id": "1471395063593",
+  "name": "My new farm",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          145.26514205953683,
+          -36.44022500597908
+        ],
+        [
+          145.2651531798829,
+          -36.445611575471446
+        ],
+        [
+          145.27180809974337,
+          -36.44567694559412
+        ],
+        [
+          145.27181656045553,
+          -36.44023174559094
+        ],
+        [
+          145.26514205953683,
+          -36.44022500597908
+        ]
+      ]
+    ],
+    "crs": "EPSG:4283"
+  },
+  "paddocks": [
+    {
+      "name": "Paddock2",
+      "_id": 1471395516689,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.26846713173825,
+              -36.44153524988093
+            ],
+            [
+              145.27018374550775,
+              -36.44150072604952
+            ],
+            [
+              145.270226660852,
+              -36.44267452770146
+            ],
+            [
+              145.26838130104974,
+              -36.44274357430457
+            ],
+            [
+              145.26846713173825,
+              -36.44153524988093
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T01:01:14.977Z",
+      "area": 2.1135540656863245
+    },
+    {
+      "name": "Paddock 1",
+      "_id": 1471395516689,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.2684672316222,
+              -36.440228363588986
+            ],
+            [
+              145.26838130104974,
+              -36.44091381856485
+            ],
+            [
+              145.26514379772937,
+              -36.44087999018727
+            ],
+            [
+              145.26514205953683,
+              -36.44022500597908
+            ],
+            [
+              145.2684672316222,
+              -36.440228363588986
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T01:01:14.977Z",
+      "area": 2.1931924559066784
+    },
+    {
+      "name": "Paddock3",
+      "_id": 1471395516706,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.26692217934564,
+              -36.44270905101065
+            ],
+            [
+              145.26692217934564,
+              -36.44274357430457
+            ],
+            [
+              145.26691925600673,
+              -36.44562892333603
+            ],
+            [
+              145.2651531798829,
+              -36.445611575471446
+            ],
+            [
+              145.26514883525513,
+              -36.442778195013155
+            ],
+            [
+              145.26692217934564,
+              -36.44270905101065
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T01:01:14.977Z",
+      "area": 5.074875200957964
+    },
+    {
+      "name": "Paddock4",
+      "_id": 1471395516709,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.26855296242672,
+              -36.44415901612631
+            ],
+            [
+              145.2718107261639,
+              -36.443986657738485
+            ],
+            [
+              145.27180809974337,
+              -36.44567694559412
+            ],
+            [
+              145.26846713173825,
+              -36.44526373326553
+            ],
+            [
+              145.26855296242672,
+              -36.44415901612631
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T01:01:14.995Z",
+      "area": 4.601664785587477
+    }
+  ],
+  "paddockGroups": [
+    {
+      "name": "N/A - Type Not Set",
+      "paddocks": []
+    },
+    {
+      "name": "E - Effluent",
+      "paddocks": []
+    },
+    {
+      "name": "N - Night Paddocks",
+      "paddocks": []
+    },
+    {
+      "name": "A - Average Use and Soil Type Paddock",
+      "paddocks": []
+    },
+    {
+      "name": "UL - Usually Harvested, Limited Feeding Back",
+      "paddocks": []
+    },
+    {
+      "name": "UF - Usually Harvested, Usually Fed Back",
+      "paddocks": []
+    },
+    {
+      "name": "NL - Never Harvested and Limited Feeding Back",
+      "paddocks": []
+    },
+    {
+      "name": "NF - Never Harvested and Usually Fed Back",
+      "paddocks": []
+    },
+    {
+      "name": "NL1 - 1st Variation of NL",
+      "paddocks": []
+    },
+    {
+      "name": "NL2 - 2nd Variation of NL",
+      "paddocks": []
+    },
+    {
+      "name": "NF1 - 1st Variation of NF",
+      "paddocks": []
+    },
+    {
+      "name": "NF2 - 2nd Variation of NF",
+      "paddocks": []
+    },
+    {
+      "name": "UL1 - 1st Variation of UL",
+      "paddocks": []
+    },
+    {
+      "name": "UF1 - 1st Variation of UF",
+      "paddocks": []
+    },
+    {
+      "name": "C - Crop",
+      "paddocks": []
+    },
+    {
+      "name": "FC - Future Crop",
+      "paddocks": []
+    },
+    {
+      "name": "O - Other",
+      "paddocks": []
+    },
+    {
+      "name": "O1 - 1st Variation of O",
+      "paddocks": []
+    },
+    {
+      "name": "New Custom Group using api",
+      "paddocks": []
+    }
+  ],
+  "paddockTypes": [
+    {
+      "name": "Annual Pasture"
+    },
+    {
+      "name": "Bull Paddock"
+    },
+    {
+      "name": "Calving paddocks"
+    },
+    {
+      "name": "Calf Rearing Area"
+    },
+    {
+      "name": "Dairy"
+    },
+    {
+      "name": "Effluent Paddocks"
+    },
+    {
+      "name": "Feedpad"
+    },
+    {
+      "name": "Lucerne"
+    },
+    {
+      "name": "Other Crops"
+    },
+    {
+      "name": "Permanent Pasture"
+    },
+    {
+      "name": "Springer Paddock"
+    },
+    {
+      "name": "Sumer Crops"
+    },
+    {
+      "name": "New Custom Type using api"
+    }
+  ],
+  "area": 35.98247143550385,
+  "areaUnit": "hectare"
+}
