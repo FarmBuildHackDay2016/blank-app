@@ -80,12 +80,8 @@
           {
             "Sample Id": "2",
             "Sample Name": "Paddock 2",
-            "pH H2O (Water)": 5.3,
-            "Olsen Phosphorus (mg/kg)": 12,
-            "Colwell Potassium (mg/kg)": 100,
-            "Colwell Phosphorus (mg/kg)": 20,
-            "KCl 40 Sulphur (mg/kg)": 7,
-            "Exch Potassium (meq/100g)": 0.2,
+            "Colwell Potassium (mg/kg)": 640,
+            "Exch Potassium (meq/100g)": 1.4,
             "PBI": 20,
             "Exch Calcium (meq/100g)": 23,
             "Exch Magnesium (meq/100g)": 44,
@@ -133,13 +129,8 @@
           {
             "Sample Id": "3",
             "Sample Name": "Paddock 3",
-            "pH H2O (Water)": 6,
-            "Olsen Phosphorus (mg/kg)": 18,
-            "Colwell Potassium (mg/kg)": 150,
-            "Colwell Phosphorus (mg/kg)": 25,
-            "KCl 40 Sulphur (mg/kg)": 10,
-            "Exch Potassium (meq/100g)": 0.4,
-            "PBI": 40
+            "Colwell Potassium (mg/kg)": 640,
+    
           }
         ]
       }
@@ -183,13 +174,9 @@
           {
             "Sample Id": "4",
             "Sample Name": "Paddock 4",
-            "pH H2O (Water)": 6.2,
-            "Olsen Phosphorus (mg/kg)": 26,
-            "Colwell Potassium (mg/kg)": 200,
-            "Colwell Phosphorus (mg/kg)": 40,
-            "KCl 40 Sulphur (mg/kg)": 12,
-            "Exch Potassium (meq/100g)": 0.5,
-            "PBI": 100
+            "Colwell Potassium (mg/kg)": 710,
+            "Exch Potassium (meq/100g)": 1.4,
+
           }
         ]
       }
@@ -241,13 +228,8 @@
           {
             "Sample Id": "5",
             "Sample Name": "Paddock 5",
-            "pH H2O (Water)": 5,
-            "Olsen Phosphorus (mg/kg)": 30,
-            "Colwell Potassium (mg/kg)": 250,
-            "Colwell Phosphorus (mg/kg)": 45,
-            "KCl 40 Sulphur (mg/kg)": 15,
-            "Exch Potassium (meq/100g)": 0.7,
-            "PBI": 700
+            "Colwell Potassium (mg/kg)": 450,
+     
           }
         ]
       }
@@ -307,13 +289,8 @@
           {
             "Sample Id": "1",
             "Sample Name": "Paddock 1",
-            "pH H2O (Water)": 4,
-            "Olsen Phosphorus (mg/kg)": 5,
-            "Colwell Potassium (mg/kg)": 50,
-            "Colwell Phosphorus (mg/kg)": 12,
-            "KCl 40 Sulphur (mg/kg)": 4,
-            "Exch Potassium (meq/100g)": 0.12,
-            "PBI": 10
+            "Colwell Potassium (mg/kg)": 450,
+  
           }
         ]
       }
