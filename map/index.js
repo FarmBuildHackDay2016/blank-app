@@ -14,7 +14,7 @@ angular.module('farmbuild.webmapping.examples',[])
 	})
 
 	.controller('MapCtrl',
-	function ($scope, $log, $location, $rootScope, $filter) {
+	function ($scope, $log, $location, $rootScope, $filter, $http) {
 		
 		var
 
@@ -497,11 +497,13 @@ angular.module('farmbuild.webmapping.examples',[])
 				webmapping.update(farmData);
 			}
 		}
-
-		$scope.loadFarmData = function () {
+		$http.get('../data/farmdata-DemoFarm-20160520094409.json').then(function(res) {
+			$scope.loadFarmData(res.data);
+		})
+		$scope.loadFarmData = function (data) {
 			var geoJsons;
-
-			var created = webmapping.create();
+			
+			var created = webmapping.load(data);
 			webmapping.load(created);
 			$scope.farmData = webmapping.find();
 			addCustomPaddockTypes($scope.farmData);
@@ -550,6 +552,6 @@ angular.module('farmbuild.webmapping.examples',[])
 			
 		};
 
-		$scope.loadFarmData();
+		//$scope.loadFarmData();
 
 	});
