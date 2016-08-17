@@ -1,0 +1,456 @@
+{
+  "version": 1,
+  "dateCreated": "2016-08-17T02:52:23.717Z",
+  "dateLastUpdated": "2016-08-17T02:56:47.871Z",
+  "id": "1471402327913",
+  "name": "Demo Farm 2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          145.213531389558,
+          -36.41852669515516
+        ],
+        [
+          145.21816661997815,
+          -36.41856501549215
+        ],
+        [
+          145.2181918229611,
+          -36.419780041069785
+        ],
+        [
+          145.2135771503819,
+          -36.41978624548447
+        ],
+        [
+          145.213531389558,
+          -36.41852669515516
+        ]
+      ]
+    ],
+    "crs": "EPSG:4283"
+  },
+  "paddockGroups": [
+    {
+      "name": "Business Default Group 1",
+      "paddocks": []
+    },
+    {
+      "name": "Business Default Group 2",
+      "paddocks": []
+    },
+    {
+      "name": "New Custom Group using api",
+      "paddocks": []
+    }
+  ],
+  "paddockTypes": [
+    {
+      "name": "Annual Pasture"
+    },
+    {
+      "name": "Bull Paddock"
+    },
+    {
+      "name": "Calving paddocks"
+    },
+    {
+      "name": "Calf Rearing Area"
+    },
+    {
+      "name": "Dairy"
+    },
+    {
+      "name": "Effluent Paddocks"
+    },
+    {
+      "name": "Feedpad"
+    },
+    {
+      "name": "Lucerne"
+    },
+    {
+      "name": "Other Crops"
+    },
+    {
+      "name": "Permanent Pasture"
+    },
+    {
+      "name": "Springer Paddock"
+    },
+    {
+      "name": "Sumer Crops"
+    },
+    {
+      "name": "Business Default Type 1"
+    },
+    {
+      "name": "New Custom Type using api"
+    }
+  ],
+  "area": 5.705695503605847,
+  "areaUnit": "hectare",
+  "soils": {
+    "soilAreas": {
+      "dateLastUpdated": "2016-08-17T12:53:31",
+      "types": [
+        {
+          "area": 4.3879,
+          "description": "Lemnos loam",
+          "soilGroup": "3",
+          "soilClass": "Medium"
+        },
+        {
+          "area": 1.3053,
+          "description": "Goulburn loam",
+          "soilGroup": "4",
+          "soilClass": "Medium"
+        }
+      ]
+    }
+  },
+  "paddocks": [
+    {
+      "name": "Paddock 1",
+      "_id": 1471402388704,
+      "area": 1.0845104043040235,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21431531385008,
+              -36.41853317600864
+            ],
+            [
+              145.21442608163477,
+              -36.418534091747254
+            ],
+            [
+              145.21441533698896,
+              -36.41978511854489
+            ],
+            [
+              145.2135771503819,
+              -36.41978624548447
+            ],
+            [
+              145.213531389558,
+              -36.41852669515516
+            ],
+            [
+              145.21431531385008,
+              -36.41853317600864
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.856Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 1.08214,
+              "description": "1.0821",
+              "soilGroup": "Paddock 1",
+              "soilClass": "Lemnos loam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Paddock 2",
+      "_id": 1471402403409,
+      "area": 0.9213160266264526,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21515633697766,
+              -36.418540128908674
+            ],
+            [
+              145.21517692088867,
+              -36.41978409459747
+            ],
+            [
+              145.214683126932,
+              -36.419784758502075
+            ],
+            [
+              145.21442588653508,
+              -36.41978510436106
+            ],
+            [
+              145.21442608163477,
+              -36.418534091747254
+            ],
+            [
+              145.21515633697766,
+              -36.418540128908674
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.856Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 0.9193,
+              "description": "0.8389",
+              "soilGroup": "Paddock 2",
+              "soilClass": "Lemnos loam"
+            },
+            {
+              "area": 0.9193,
+              "description": "0.0804",
+              "soilGroup": "Paddock 2",
+              "soilClass": "Goulburn loam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Paddock 3",
+      "_id": 1471402422869,
+      "area": 0.9089285673884846,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21515633697766,
+              -36.418540128908674
+            ],
+            [
+              145.21541872139335,
+              -36.418542298090934
+            ],
+            [
+              145.2154375485727,
+              -36.41854245373883
+            ],
+            [
+              145.2158963281141,
+              -36.418546246557185
+            ],
+            [
+              145.215906658964,
+              -36.4197831134666
+            ],
+            [
+              145.21560344219876,
+              -36.41978352114071
+            ],
+            [
+              145.21541944709358,
+              -36.41978376852163
+            ],
+            [
+              145.21517692088867,
+              -36.41978409459747
+            ],
+            [
+              145.21515633697766,
+              -36.418540128908674
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.856Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 0.90694,
+              "description": "0.5212",
+              "soilGroup": "Paddock 3",
+              "soilClass": "Lemnos loam"
+            },
+            {
+              "area": 0.90694,
+              "description": "0.3857",
+              "soilGroup": "Paddock 3",
+              "soilClass": "Goulburn loam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Paddock 4",
+      "_id": 1471402442019,
+      "area": 0.9432389601091778,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21668984755723,
+              -36.418552806733956
+            ],
+            [
+              145.2166789537438,
+              -36.41978207511837
+            ],
+            [
+              145.21591724436212,
+              -36.41978309923456
+            ],
+            [
+              145.215917232481,
+              -36.41854641937756
+            ],
+            [
+              145.21668984755723,
+              -36.418552806733956
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.856Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 2.95117,
+              "description": "0.5618",
+              "soilGroup": "Paddock 4",
+              "soilClass": "Goulburn loam"
+            },
+            {
+              "area": 0.94117,
+              "description": "0.3794",
+              "soilGroup": "Paddock 4",
+              "soilClass": "Lemnos loam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Paddock 5",
+      "_id": 1471402456081,
+      "area": 0.8200133749087157,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.2173661337445,
+              -36.41855839772062
+            ],
+            [
+              145.21737630821488,
+              -36.41978113752718
+            ],
+            [
+              145.2166896825499,
+              -36.419782060693535
+            ],
+            [
+              145.2167111927525,
+              -36.418552983198786
+            ],
+            [
+              145.2173661337445,
+              -36.41855839772062
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.871Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 2.81822,
+              "description": "2.1717",
+              "soilGroup": "Paddock 5",
+              "soilClass": "Goulburn loam"
+            },
+            {
+              "area": 0.81822,
+              "description": "0.6465",
+              "soilGroup": "Paddock 5",
+              "soilClass": "Lemnos loam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Paddock 6",
+      "_id": 1471402472158,
+      "area": 0.9820324297219064,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.2173661337445,
+              -36.41855839772062
+            ],
+            [
+              145.21752705767523,
+              -36.41855972810932
+            ],
+            [
+              145.21816661997815,
+              -36.41856501549215
+            ],
+            [
+              145.2181918229611,
+              -36.419780041069785
+            ],
+            [
+              145.21737630821488,
+              -36.41978113752718
+            ],
+            [
+              145.2173661337445,
+              -36.41855839772062
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-08-17T02:56:47.871Z",
+      "soils": {
+        "soilAreas": {
+          "dateLastUpdated": "2016-08-17T12:53:31",
+          "types": [
+            {
+              "area": 10.97988,
+              "description": "0.8929",
+              "soilGroup": "Paddock 6",
+              "soilClass": "Lemnos loam"
+            },
+            {
+              "area": 0.97988,
+              "description": "0.087",
+              "soilGroup": "Paddock 6",
+              "soilClass": "Goulburn loam"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
