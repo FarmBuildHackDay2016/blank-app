@@ -479,13 +479,6 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			}
 		}
 
-		function getRiskForPaddock(paddock) {
-			var colP = 1;
-			var pbi = 1;
-
-			var risk = riskService.calculateRisk(colP,pbi);
-			return risk;
-		}
 		/**
 		 * If you want to use api to add custom paddock groups this the way to to so
 		 */
@@ -505,6 +498,8 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 				webmapping.update(farmData);
 			}
 		}
+
+
 		//revised_soil_data.json
 		$http.get('../data/revised_soil_data.json').then(function(res) {
 			$scope.loadFarmData(res.data);
@@ -562,7 +557,54 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			solarService.getSolarCover(new Date().getTime()).then(function (cover) {
 				console.log('the cover is: ' + JSON.stringify(cover));
 			})
+
+			var paddocksLayer = farmbuild.webmapping.olHelper.paddocksLayer(olMap);
+			//console.log()
+			var features = paddocksLayer.getSource().getFeatures();
+			var paddockMap = getPaddockMap(farmbuild.farmdata.find().paddocks);
+			features.forEach(function (feature) {
+				var farmdata = farmbuild.farmdata.find(), 
+				paddock = paddockMap[feature.getProperties().name],
+			    colour = getColour(farmdata, paddock);
+				feature.setStyle(new ol.style.Style({
+					fill: new ol.style.Fill({
+						color: colour//convertHex(colour, 65)
+					}),
+					stroke: new ol.style.Stroke({
+						color: 'rgba(238,238,238,.7)',
+						width: 1
+					})
+				}))
+			})
+			
+			
 		};
+		function getPaddockMap (paddocks) {
+			var map = {};
+
+			paddocks.forEach(function (paddock) {
+				map[paddock.name] = paddock;
+			});
+			return map;
+		}
+		function getColour(farmdata, paddock){
+			//console.log(JSON.stringify(farmdata));
+			var soilResults = paddock.soils.sampleResults[0];
+			console.log(soilResults.ColP,soilResults.PBI);
+			//console.log(paddock.soils.sampleResults[0]);
+			var risk = riskService.calculateRisk(soilResults.ColP, soilResults.PBI);
+
+
+
+			return '#fff6a6'
+		}
+
+		function findPaddockByName(paddocks, name) {
+			return paddocks.some(function (p) {
+				//console.info('findPaddockById', paddocks, name, p);
+				return p.name === name;
+			})
+		}
 
 		//$scope.loadFarmData();
 	}).service('riskService', function ($http) {
