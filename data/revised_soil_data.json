@@ -85,7 +85,7 @@
             "PBI": 66,
             "Exch Calcium (meq/100g)": 9,
             "Exch Magnesium (meq/100g)": 1.4,
-            "K to CaMg": 0.134615385
+            "K:CaMg": 0.134615385
           }
         ]
       }
@@ -134,7 +134,7 @@
             "PBI": 66,
             "Exch Calcium (meq/100g)": 9,
             "Exch Magnesium (meq/100g)": 1.4,
-            "K to CaMg": 0.134615385
+            "K:CaMg": 0.134615385
     
           }
         ]
@@ -184,7 +184,7 @@
             "PBI": 79,
             "Exch Calcium (meq/100g)": 8.4,
             "Exch Magnesium (meq/100g)": 1.5,
-            "K to CaMg": 0.154639175
+            "K:CaMg": 0.154639175
 
           }
         ]
@@ -242,7 +242,7 @@
             "PBI": 75,
             "Exch Calcium (meq/100g)": 10,
             "Exch Magnesium (meq/100g)": 2.1,
-            "K to CaMg": 0.082644628
+            "K:CaMg": 0.082644628
           }
         ]
       }
@@ -307,7 +307,7 @@
             "PBI": 75,
             "Exch Calcium (meq/100g)": 10,
             "Exch Magnesium (meq/100g)": 2.1,
-            "K to CaMg": 0.082644628
+            "K:CaMg": 0.082644628
           }
         ]
       }
