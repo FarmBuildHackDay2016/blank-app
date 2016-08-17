@@ -111,3 +111,11 @@ if RR_sum == 5 || RR_sum == 6
   RR = 3 // HIGH Risk Rating
 
 return RR
+```
+
+###Farmbuild Services & Components Required
+The ability to integrate more closely with BoM and pull in climate and weather data sets or if these serivces were available directly in Farmbuild
+
+### Required Data Sets
+All the required data sets exists, however the soil parameters require on the ground physical samples be taken, geolocated and loaded into Farmbuild
+
