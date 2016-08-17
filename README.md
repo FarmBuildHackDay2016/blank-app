@@ -1,4 +1,4 @@
-## Team Name: The Crafty Cow Carers
+## Team Name: The Crafty Cows
 
 ### Tool Name: Downer Cow Risk Rating
 
