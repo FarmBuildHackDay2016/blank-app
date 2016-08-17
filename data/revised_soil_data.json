@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "dateCreated": "2016-05-19T23:30:48.804Z",
+  "dateLastUpdated": "2016-05-20T00:21:52.301Z",
+  "id": "1463700639791",
+  "name": "Demo Farm",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          145.20463420946572,
+          -36.45040741529752
+        ],
+        [
+          145.21042676043905,
+          -36.45042900591353
+        ],
+        [
+          145.21045822012422,
+          -36.45393955542316
+        ],
+        [
+          145.2103339503623,
+          -36.453938555177395
+        ],
+        [
+          145.2103326495078,
+          -36.45470259523143
+        ],
+        [
+          145.20463647049445,
+          -36.45469613556116
+        ],
+        [
+          145.20463420946572,
+          -36.45040741529752
+        ]
+      ]
+    ],
+    "crs": "EPSG:4283"
+  },
+  "paddocks": [
+    {
+      "name": "Paddock 2",
+      "_id": 1463700753655,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.20463647049445,
+              -36.45469613556116
+            ],
+            [
+              145.2046351202043,
+              -36.45213493315761
+            ],
+            [
+              145.20566421596365,
+              -36.45212629635885
+            ],
+            [
+              145.20572848406283,
+              -36.45469737394364
+            ],
+            [
+              145.20463647049445,
+              -36.45469613556116
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-05-19T23:44:09.910Z",
+      "area": 2.7127825769023253,
+      "$$hashKey": "object:48",
+      "soils": {
+        "sampleResults": [
+          {
+            "Sample Id": "2",
+            "Sample Name": "Paddock 2",
+            "pH H2O (Water)": 5.3,
+            "Olsen Phosphorus (mg/kg)": 12,
+            "Colwell Potassium (mg/kg)": 100,
+            "Colwell Phosphorus (mg/kg)": 20,
+            "KCl 40 Sulphur (mg/kg)": 7,
+            "Exch Potassium (meq/100g)": 0.2,
+            "PBI": 20,
+            "Exch Calcium (meq/100g)": 23,
+            "Exch Magnesium (meq/100g)": 44,
+            "K to CaM": 800
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paddock 3",
+      "_id": 1463700753656,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.20566421596365,
+              -36.45212629635885
+            ],
+            [
+              145.2072413548644,
+              -36.45215218568779
+            ],
+            [
+              145.2072090907494,
+              -36.454699053004504
+            ],
+            [
+              145.20572848406283,
+              -36.45469737394364
+            ],
+            [
+              145.20566421596365,
+              -36.45212629635885
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-05-19T23:44:09.910Z",
+      "area": 3.8993719653766203,
+      "$$hashKey": "object:49",
+      "soils": {
+        "sampleResults": [
+          {
+            "Sample Id": "3",
+            "Sample Name": "Paddock 3",
+            "pH H2O (Water)": 6,
+            "Olsen Phosphorus (mg/kg)": 18,
+            "Colwell Potassium (mg/kg)": 150,
+            "Colwell Phosphorus (mg/kg)": 25,
+            "KCl 40 Sulphur (mg/kg)": 10,
+            "Exch Potassium (meq/100g)": 0.4,
+            "PBI": 40
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paddock 4",
+      "_id": 1463700753656,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.2072413548644,
+              -36.45215218568779
+            ],
+            [
+              145.20915108768304,
+              -36.45229026196299
+            ],
+            [
+              145.2091510062159,
+              -36.45470125520583
+            ],
+            [
+              145.2072090907494,
+              -36.45469905300448
+            ],
+            [
+              145.2072413548644,
+              -36.45215218568779
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-05-19T23:44:09.910Z",
+      "area": 4.759552042485163,
+      "$$hashKey": "object:50",
+      "soils": {
+        "sampleResults": [
+          {
+            "Sample Id": "4",
+            "Sample Name": "Paddock 4",
+            "pH H2O (Water)": 6.2,
+            "Olsen Phosphorus (mg/kg)": 26,
+            "Colwell Potassium (mg/kg)": 200,
+            "Colwell Phosphorus (mg/kg)": 40,
+            "KCl 40 Sulphur (mg/kg)": 12,
+            "Exch Potassium (meq/100g)": 0.5,
+            "PBI": 100
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paddock 5",
+      "_id": 1463700753656,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21044390024238,
+              -36.45234163624189
+            ],
+            [
+              145.21045822012422,
+              -36.45393955542316
+            ],
+            [
+              145.2103339503623,
+              -36.453938555177395
+            ],
+            [
+              145.2103326495078,
+              -36.45470259523143
+            ],
+            [
+              145.2091510062159,
+              -36.45470125520583
+            ],
+            [
+              145.20915108768304,
+              -36.45229026196299
+            ],
+            [
+              145.21044390024238,
+              -36.45234163624189
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-05-19T23:44:09.911Z",
+      "area": 3.001959591277748,
+      "$$hashKey": "object:51",
+      "soils": {
+        "sampleResults": [
+          {
+            "Sample Id": "5",
+            "Sample Name": "Paddock 5",
+            "pH H2O (Water)": 5,
+            "Olsen Phosphorus (mg/kg)": 30,
+            "Colwell Potassium (mg/kg)": 250,
+            "Colwell Phosphorus (mg/kg)": 45,
+            "KCl 40 Sulphur (mg/kg)": 15,
+            "Exch Potassium (meq/100g)": 0.7,
+            "PBI": 700
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paddock 1",
+      "_id": 1463701447308,
+      "area": 10.323948522957622,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              145.21042742395943,
+              -36.45050304901721
+            ],
+            [
+              145.21044390024238,
+              -36.45234163624189
+            ],
+            [
+              145.20915108768304,
+              -36.45229026196299
+            ],
+            [
+              145.2072413548644,
+              -36.45215218568779
+            ],
+            [
+              145.20566421596365,
+              -36.45212629635885
+            ],
+            [
+              145.2046351202043,
+              -36.45213493315761
+            ],
+            [
+              145.20463420946572,
+              -36.45040741529752
+            ],
+            [
+              145.21042676043905,
+              -36.45042900591353
+            ],
+            [
+              145.21042742395943,
+              -36.45050304901721
+            ]
+          ]
+        ],
+        "crs": "EPSG:4283"
+      },
+      "dateLastUpdated": "2016-05-19T23:44:09.911Z",
+      "$$hashKey": "object:52",
+      "soils": {
+        "sampleResults": [
+          {
+            "Sample Id": "1",
+            "Sample Name": "Paddock 1",
+            "pH H2O (Water)": 4,
+            "Olsen Phosphorus (mg/kg)": 5,
+            "Colwell Potassium (mg/kg)": 50,
+            "Colwell Phosphorus (mg/kg)": 12,
+            "KCl 40 Sulphur (mg/kg)": 4,
+            "Exch Potassium (meq/100g)": 0.12,
+            "PBI": 10
+          }
+        ]
+      }
+    }
+  ],
+  "paddockGroups": [
+    {
+      "name": "Business Default Group 1",
+      "paddocks": []
+    },
+    {
+      "name": "Business Default Group 2",
+      "paddocks": []
+    },
+    {
+      "name": "New Custom Group using api",
+      "paddocks": []
+    }
+  ],
+  "paddockTypes": [
+    {
+      "name": "Annual Pasture"
+    },
+    {
+      "name": "Bull Paddock"
+    },
+    {
+      "name": "Calving paddocks"
+    },
+    {
+      "name": "Calf Rearing Area"
+    },
+    {
+      "name": "Dairy"
+    },
+    {
+      "name": "Effluent Paddocks"
+    },
+    {
+      "name": "Feedpad"
+    },
+    {
+      "name": "Lucerne"
+    },
+    {
+      "name": "Other Crops"
+    },
+    {
+      "name": "Permanent Pasture"
+    },
+    {
+      "name": "Springer Paddock"
+    },
+    {
+      "name": "Sumer Crops"
+    },
+    {
+      "name": "Business Default Type 1"
+    },
+    {
+      "name": "New Custom Type using api"
+    }
+  ],
+  "area": 24.697615258567588,
+  "areaUnit": "hectare",
+  "soils": {
+    "sampleResults": {
+      "dateLastUpdated": "2016-05-20T00:21:52.301Z",
+      "importFieldNames": [
+        "Sample Id",
+        "Sample Name",
+        "pH H2O (Water)",
+        "Olsen Phosphorus (mg/kg)",
+        "Colwell Potassium (mg/kg)",
+        "Colwell Phosphorus (mg/kg)",
+        "KCl 40 Sulphur (mg/kg)",
+        "Exch Potassium (meq/100g)",
+        "PBI"
+      ]
+    }
+  }
+}
