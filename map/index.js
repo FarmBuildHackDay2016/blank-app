@@ -14,12 +14,8 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 	})
 
 	.controller('MapCtrl',
-<<<<<<< Updated upstream
-	function ($scope, $log, $location, $rootScope, $filter, $http) {
-=======
-	function ($scope, $log, $location, $rootScope, $filter, solarService) {
->>>>>>> Stashed changes
-		
+	function ($scope, $log, $location, $rootScope, $filter, solarService, $http, riskService) {
+
 		var
 
 			/**
@@ -483,6 +479,13 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			}
 		}
 
+		function getRiskForPaddock(paddock) {
+			var colP = 1;
+			var pbi = 1;
+
+			var risk = riskService.calculateRisk(colP,pbi);
+			return risk;
+		}
 		/**
 		 * If you want to use api to add custom paddock groups this the way to to so
 		 */
@@ -561,11 +564,13 @@ angular.module('farmbuild.webmapping.examples',['ui.bootstrap'])
 			})
 		};
 
-		$scope.loadFarmData();
+		//$scope.loadFarmData();
 	}).service('riskService', function ($http) {
 	
-		this.calculateRisk = function(paddocks) {
-			
+		this.calculateRisk = function(colP, pbi) {
+
+
+			return parseInt(Math.random() * 3) + 1;
 		}
 
 	}).service('solarService', function ($http) {
